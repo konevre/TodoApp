@@ -1,0 +1,18 @@
+{% extends 'base/main.html' %}
+
+{% block content %}
+<div class="header-bar">
+    <h1>Settings</h1>
+</div>
+
+<div class="card-body">
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <a href="{% url 'password_change' %}">Change Password</a>
+        <p>
+        <input class="button" type="submit" value="Update">
+        <a class="button" href="{% url 'task_list' %}">Cancel</a>
+    </form>
+</div>
+{% endblock content %}
